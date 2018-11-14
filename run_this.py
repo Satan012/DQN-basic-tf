@@ -34,7 +34,7 @@ def run_maze():
             # 控制学习起始时间和频率 (先累积一些记忆再开始学习)
             if (step > 200) and (step % 5 == 0):
                 RL.learn()
-            if step >200 and step % 100 == 0:
+            if RL.learn_step_counter > 200 and RL.learn_step_counter % 200 == 0:
                 print('sucess_count:', sucess_count)
                 sucesses.append(sucess_count)
 
